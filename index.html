@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <!-- Navbar estilo desktop -->
+    <!-- Selector de temas -->
+    <div class="theme-selector">
+        <button class="theme-btn green" data-theme="green"></button>
+        <button class="theme-btn orange" data-theme="orange"></button>
+        <button class="theme-btn red" data-theme="red"></button>
+        <button class="theme-btn purple" data-theme="purple"></button>
+    </div>
+
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-content">
@@ -16,7 +24,6 @@
                     <a href="#comparador" class="nav-item">Comparar</a>
                     <a href="#mapa" class="nav-item">Mapa</a>
                     <a href="#lista" class="nav-item">Lista</a>
-                    <div class="nav-item profile-placeholder"></div>
                 </div>
             </div>
         </div>
@@ -31,28 +38,91 @@
                     <input type="text" placeholder="Buscar producto..." disabled>
                 </div>
                 <div class="features-grid">
-                    <!-- Tarjetas características -->
+                    <div class="feature-card">
+                        <h3>Compara</h3>
+                        <p>Precios en tiempo real</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Organiza</h3>
+                        <p>Tu lista de compra</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Descubre</h3>
+                        <p>Ofertas cercanas</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Otras secciones mantienen misma estructura pero dentro de container -->
+        <!-- Comparador de precios -->
+        <section id="comparador">
+            <h2>Comparación de precios</h2>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>SuperA</th>
+                        <th>SuperB</th>
+                        <th>SuperC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Leche Entera 1L</td>
+                        <td>1.20€</td>
+                        <td>1.15€</td>
+                        <td>1.30€</td>
+                    </tr>
+                    <tr>
+                        <td>Pan Integral</td>
+                        <td>2.50€</td>
+                        <td>2.30€</td>
+                        <td>2.60€</td>
+                    </tr>
+                    <tr>
+                        <td>Huevos XL 12ud</td>
+                        <td>3.00€</td>
+                        <td>2.90€</td>
+                        <td>3.10€</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Mapa ficticio -->
+        <section id="mapa">
+            <h2>Supermercados cercanos</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-marker" style="left: 30%; top: 40%;"></div>
+                    <div class="map-marker" style="left: 60%; top: 55%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de compra -->
+        <section id="lista">
+            <h2>Mi Lista de Compra</h2>
+            <div class="shopping-list">
+                <div class="list-item" draggable="true">Manzanas 🍎</div>
+                <div class="list-item" draggable="true">Pan 🥖</div>
+                <div class="list-item" draggable="true">Leche 🥛</div>
+            </div>
+        </section>
     </main>
 
-    <script>
-        // Scroll suave para navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 SmartShop</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>
